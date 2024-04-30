@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+
+<form action="" method="POST">
+{% csrf_token %}
+<div class="registration-container">
+    <div class="card">
+        <h1>Registration</h1>
+        {% for field in form %}
+        <div class="input-list">
+            <label for="username">{{field.label}}</label>
+            {{field}}
+
+            {% for error in field.errors %}
+
+            <p style="color:red"> {{error}} </p>
+            
+            {% endfor %}
+
+        </div>
+        {% endfor %}
+        <div class="input-list">
+            <input type="submit" value="register" class="register-btn">
+        </div>
+        <div class="social-media-links">
+            <p>Or register using:</p>
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">Twitter</a>
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="https://accounts.google.com/signup" class="gmail-link">Register with Gmail</a>
+        </div>
+        <div class="policies">
+            <p>By registering, you agree to our <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>.</p>
+        </div>
+    </div>
+</div>  
+
+</form>
+
+{% endblock content %}

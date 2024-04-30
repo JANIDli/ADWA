@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .table-spacing tr {
+        margin-bottom: 10px; /* Adds space between rows */
+    }
+
+    .link-button {
+        padding: 10px 20px;
+        color: aliceblue;
+        background-color: darkblue;
+        text-decoration: none;
+        border-radius: 5px; /* Optional: Rounds the corners of the buttons */
+        display: inline-block; /* Keeps the padding and allows border-radius */
+    }
+
+    .link-button:hover {
+        background-color: navy; /* Darker blue on hover for better interaction */
+    }
+
+    .table-cell-action {
+        text-align: center; /* Centers the action links in their cells */
+    }
+</style>
+
+<table class="table table-sm table-dark table-spacing">
+    <tr> 
+        <td> Title </td>    
+    </tr>
+
+    {% for posts in post %}
+    <tr>
+        <td> {{ posts.title }}</td>
+        <td class="table-cell-action"><a href="{% url 'single-post' posts.id %}" class="link-button">View Post</a></td>
+        <td class="table-cell-action"><a href="{% url 'update-post' posts.id %}" class="link-button">Update</a></td>
+        <td class="table-cell-action"><a href="{% url 'delete-post' posts.id %}" class="link-button">Delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

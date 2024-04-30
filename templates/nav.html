@@ -1,0 +1,23 @@
+<div class="nav-container">
+    <div class="nav-band">
+        <h1>B-PLAT</h1>
+    </div>
+    <div class="nav-link">
+        <a href="#home" onclick="smoothScroll('#home')">Home</a>
+        {% if user.is_authenticated %}
+            {% if user.is_superuser %}
+            <a href="{% url 'adminpage'%}" > adminpage </a>
+            <a href="{% url 'add-post'%}" > add new post </a>
+            {% endif %}
+            <a href="{% url 'user-logout'%}" class="login-btn"> logout </a>
+
+        {% else %}
+            <a class="login-btn" href="{% url 'login'%}">Login</a>
+            <a class="login-btn" href="{% url 'register'%}">Register</a>
+        {% endif %}
+
+
+    </div>
+</div>
+
+

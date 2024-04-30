@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .animated-title {
+        animation: fadeIn ease 2s;
+        animation-fill-mode: forwards;
+        
+    }
+
+    .animated-description {
+        animation: fadeIn ease 2s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    .post-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        animation: fadeIn ease 2s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+        width: 500px;
+        height: 500px;
+    }
+</style>
+<h2 class="animated-title" style="opacity: 0;">{{ post.title }}</h2>
+<h4 class="animated-description" style="opacity: 0;">{{ post.description }}</h4>
+<img class="post-image" src="{{ post.image.url }}" alt="">
+{% endblock content %}

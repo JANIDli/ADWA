@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+
+
+{% block content %}
+
+<form action="{% url 'login'%}" method="POST">
+{% csrf_token %}
+<div class="registration-container">
+    <div class="card">
+        <h1>Login</h1>
+        <div class="input-list">
+            <label for="username">User Name</label>
+            <input type="text"  name="username">
+        </div>
+        <div class="input-list">
+            <label for="password">Password</label>
+            <input type="password" name="password">
+        </div>
+        <div class="input-list">
+            <input type="submit" value="login" style="text-decoration: none; background-color: aqua; padding: 9px; border-radius: 15px; color: aliceblue; box-shadow: grey 1px 2px 1px;">
+        </div>
+        <div class="policies">
+            <p> <a href="#">Forgotten password</a></p>
+        </div>
+    </div>
+</div>  
+</form>
+
+{% endblock content %}

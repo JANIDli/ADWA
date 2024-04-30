@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+
+<form action="" method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    {{form}}
+    <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+
+</form>
+
+
+{% endblock content %}
