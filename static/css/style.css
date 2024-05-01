@@ -106,7 +106,7 @@ input[type="email"],
 input[type="password"] {
     width: calc(100% - 10px); /* Subtracting padding and border width */
     padding: 9px;
-    border: 1px solid #ccc;
+    border: 1px solid #f8cdcd;
     border-radius: 3px;
     box-sizing: border-box;
 }
